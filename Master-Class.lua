@@ -4,11 +4,11 @@ local Inventory = {}
 
 local Finder = require("TInv")
 
-local WeaponNamesPrinter = http://table.concat(Finder.name,", ")
+local WeaponNamesPrinter = table.concat(Finder.name,", ")
 print(WeaponNamesPrinter)
 
 --[[io.write("What item do you want to remove from your Inventory? ")
-local MeleeBag = http://io.read()]]
+local MeleeBag = io.read()]]
 
 function Inventory:new()
 local UserBag = {}
@@ -23,7 +23,7 @@ local InitSearch = Finder:search(content)
 
     if InitSearch then
    print(content.." Found!!")
-    http://table.insert(self,content)
+    table.insert(self,content)
 elseif InitSearch == nil then
     print(content.." does not exist")
 end
@@ -34,7 +34,7 @@ local UserNothave = Finder:Remove(Item)
 for i = 1,#self do
     if self == Item then
         print("You have removed "..Item)
-        http://table.remove(self,i)
+        table.remove(self,i)
         return
     end
     end
